@@ -195,7 +195,7 @@
 </head>
 <body>
 
-  <!-- Background Glow & Stars -->
+  <!-- Background Glow & Love -->
   <div class="light-glow glow-1"></div>
   <div class="light-glow glow-2"></div>
   <div class="stars"></div>
@@ -254,9 +254,9 @@
         <img src="foto6.jpeg" alt="Foto 4">
       </div>
       <h2>Dahla Capek</h2>
-      <p><i>Alay kalau banyak-banyak</i>
-        <i>Lebihnya doa sendiri dah besyarrr</i>
-        <br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
+      <p><i>Alay kalau banyak-banyak</i></p>
+      <p> <i>Lebihnya doa sendiri yaww</i></p>
+        <br>Sekali lagi, Happy Birthday! 🥳✨
         <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss</button>
     </div>
 
