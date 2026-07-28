@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -200,7 +201,7 @@
         <img src="foto1.jpeg" alt="Foto 1">
       </div>
       <h2>Klik Sampai Abis Yaw..</h2>
-      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini..</button>
+      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini ➡️</button>
     </div>
 
     <!-- KARTU 2 -->
@@ -211,7 +212,7 @@
       </div>
       <h2>Happy Birthday Sayang!!🥳🎉</h2>
       <p>Selamat ulang tahun!! Ada beberapa ucapan singkat dari adik untuk sayangku...</p>
-      <button class="btn" onclick="nextCard(2, 3, event)">Klik Disini Lagi</button>
+      <button class="btn" onclick="nextCard(2, 3, event)">Klik Disini Lagi ➡️</button>
     </div>
 
     <!-- KARTU 3 -->
@@ -223,7 +224,7 @@
       </div>
       <h2>Tapi Terima Kasih ✨</h2>
       <p>Terima kasih sudah selalu membawa kenyamanan, keceriaan, kelucuan, apalagi? kepercayaan di setiap momen ldr kita ini</p>
-      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi.. </button>
+      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi.. ➡️</button>
     </div>
 
     <!-- KARTU 4 -->
@@ -234,7 +235,7 @@
       </div>
       <h2>Harapan Terbaik 🎂</h2>
       <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu... doa-doa baik untuk sayangku..</p>
-      <button class="btn" onclick="nextCard(4, 5, event)">Terakhir </button>
+      <button class="btn" onclick="nextCard(4, 5, event)">Terakhir ➡️</button>
     </div>
 
     <!-- KARTU 5 -->
@@ -244,8 +245,8 @@
         <img src="foto6.jpeg" alt="Foto 5">
       </div>
       <h2>Dahla Capek</h2>
-      <p><i>Alay kalau banyak-banyak</i><br><i>Selebihnya doa sendiri yaww</i><br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
-      <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss </button>
+      <p><i>Alay kalau banyak-banyak</i><br><i>Lebihnya doa sendiri yaww</i><br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
+      <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss ➡️</button>
     </div>
 
     <!-- KARTU 6 -->
@@ -254,8 +255,8 @@
       <div class="photo-frame">
         <img src="foto5.jpeg" alt="Foto 6">
       </div>
-      <h2>Love You Sayang! 💖</h2>
-      <button class="btn" onclick="restartCards(event)">🔄</button>
+      <h2>I Love You! 💖</h2>
+      <button class="btn" onclick="restartCards(event)">Ulang dari Awal 🔄</button>
     </div>
 
   </div>
