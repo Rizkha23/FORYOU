@@ -213,7 +213,7 @@
     </div>
 
  <!-- KARTU 2 -->
-    <div class="card" id="card2">
+    <div class="card active" id="card2">
       <span class="badge">A Special Wish</span>
       <div class="photo-frame">
         <img src="foto2.jpeg" alt="Foto 2">
@@ -224,7 +224,7 @@
     </div>
 
     <!-- KARTU 3 -->
-    <div class="card" id="card3">
+    <div class="card active" id="card3">
       <span class="badge">📸</span>
       <div class="photo-frame">
         <img src="foto3.jpeg" alt="Foto 3">
@@ -235,7 +235,7 @@
     </div>
 
     <!-- KARTU 4 -->
-    <div class="card" id="card4">
+    <div class="card active" id="card4">
       <span class="badge">Secuil Doa</span>
       <div class="photo-frame">
         <img src="foto4.jpeg" alt="Foto 3">
@@ -247,7 +247,7 @@
     </div>
 
     <!-- KARTU 5 -->
-    <div class="card" id="card5">
+    <div class="card active" id="card5">
       <span class="badge">Pesan Terakhir</span>
       <div class="photo-frame">
         <img src="foto6.jpeg" alt="Foto 4">
@@ -260,7 +260,7 @@
     </div>
 
      <!-- KARTU 6 -->
-    <div class="card" id="card6">
+    <div class="card active" id="card6">
       <span class="badge">Sekian Terima Gaji🙏🤙</span>
       <div class="photo-frame">
         <img src="foto6.jpeg" alt="Foto 4">
