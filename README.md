@@ -254,7 +254,7 @@
       </div>
       <h2>Dahla Capek</h2>
       <p><i>Alay kalau banyak-banyak</i>
-        <i>Lebihnya doqa sendiri dah besyarrr</i>
+        <i>Lebihnya doa sendiri dah besyarrr</i>
         <br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
       <button class="btn" onclick="restartCards(event)">Dah Habisss</button>
     </div>
@@ -262,6 +262,9 @@
      <!-- KARTU 6 -->
     <div class="card" id="card4">
       <span class="badge">Sekian Terima Gaji🙏🤙</span>
+      <div class="photo-frame">
+        <img src="foto6.jpeg" alt="Foto 4">
+      </div>
     </div>
 
   </div>
