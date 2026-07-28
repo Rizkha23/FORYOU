@@ -205,16 +205,26 @@
 
     <!-- KARTU 1 -->
     <div class="card active" id="card1">
-      <span class="badge">A Special Wish ✨</span>
+      <span class="badge">Karya Kecil dari Adik Kecil💃😘</span>
       <div class="photo-frame">
         <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500" alt="Foto 1">
       </div>
-      <h2>Happy Birthday! 🎉</h2>
-      <p>Selamat ulang tahun! Ada beberapa ucapan singkat yang ingin aku sampaikan untukmu...</p>
-      <button class="btn" onclick="nextCard(1, 2, event)">Lanjut ➡️</button>
+      <h2>Klik-Klik Sampai Abis Yaw..</h2>
+      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini</button>
     </div>
 
-    <!-- KARTU 2 -->
+ <!-- KARTU 2 -->
+    <div class="card" id="card2">
+      <span class="badge">A Special Wish</span>
+      <div class="photo-frame">
+        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="Foto 2">
+      </div>
+      <h2>Happy Birthday Sayang!!🥳🎉</h2>
+      <p>Selamat ulang tahun!! Ada beberapa upacapan singkat dari adik unutk sayangku...</p>
+      <button class="btn" onclick="nextCard(2, 3, event)">Kilik Disini Lagi</button>
+    </div>
+
+    <!-- KARTU 3 -->
     <div class="card" id="card2">
       <span class="badge">Kenangan & Momen 📸</span>
       <div class="photo-frame">
@@ -225,7 +235,7 @@
       <button class="btn" onclick="nextCard(2, 3, event)">Lanjut Lagi ➡️</button>
     </div>
 
-    <!-- KARTU 3 -->
+    <!-- KARTU 4 -->
     <div class="card" id="card3">
       <span class="badge">Doa Untukmu 🌟</span>
       <div class="photo-frame">
@@ -236,7 +246,7 @@
       <button class="btn" onclick="nextCard(3, 4, event)">Pesan Terakhir 💌</button>
     </div>
 
-    <!-- KARTU 4 -->
+    <!-- KARTU 5 -->
     <div class="card" id="card4">
       <span class="badge">Pesan Terakhir 💖</span>
       <div class="photo-frame">
