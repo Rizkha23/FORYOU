@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -16,65 +17,48 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0f0c20 0%, #15102a 40%, #1e1b4b 70%, #090d16 100%);
+      /* Background Pastel (Hijau, Kuning, Merah Muda, Biru Muda) */
+      background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 35%, #fef9c3 65%, #ffe4e6 100%);
+      background-size: 300% 300%;
+      animation: pastelShift 12s ease infinite;
       padding: 20px;
       overflow-x: hidden;
       position: relative;
-      color: #f8fafc;
+      color: #334155;
     }
 
-    /* Ambient Glowing Background Lights */
+    @keyframes pastelShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Ambient Glowing Pastel Lights */
     .light-glow {
       position: fixed;
       border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.65;
+      filter: blur(80px);
+      opacity: 0.6;
       pointer-events: none;
-      animation: pulseGlow 10s infinite alternate ease-in-out;
     }
 
     .glow-1 {
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, #e11d48 0%, rgba(225, 29, 72, 0) 70%);
-      top: -10%;
-      left: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, #fbcfe8 0%, rgba(251, 207, 232, 0) 70%);
+      top: -5%;
+      left: -5%;
     }
 
     .glow-2 {
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(circle, #7c3aed 0%, rgba(124, 58, 237, 0) 70%);
-      bottom: -10%;
-      right: -10%;
-      animation-delay: -5s;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #bbf7d0 0%, rgba(187, 247, 208, 0) 70%);
+      bottom: -5%;
+      right: -5%;
     }
 
-    /* Star Twinkle Background */
-    .stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      background: radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-                  radial-gradient(2px 2px at 40px 70px, #fb7185, rgba(0,0,0,0)),
-                  radial-gradient(2px 2px at 80px 120px, #ffffff, rgba(0,0,0,0)),
-                  radial-gradient(3px 3px at 150px 200px, #a78bfa, rgba(0,0,0,0)),
-                  radial-gradient(2px 2px at 280px 300px, #ffffff, rgba(0,0,0,0));
-      background-repeat: repeat;
-      background-size: 250px 250px;
-      opacity: 0.4;
-      animation: twinkle 4s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.7; }
-    }
-
-    /* Outer Wrapper agar ukuran konsisten */
+    /* Outer Wrapper */
     .wrapper {
       width: 100%;
       max-width: 360px;
@@ -84,15 +68,15 @@
     /* Card Styling */
     .card {
       display: none;
-      background: rgba(30, 41, 59, 0.65);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-radius: 24px;
       padding: 24px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
-                  inset 0 1px 1px rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 15px 35px rgba(148, 163, 184, 0.25),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       width: 100%;
     }
 
@@ -114,27 +98,27 @@
 
     .badge {
       display: inline-block;
-      background: rgba(244, 63, 94, 0.18);
-      color: #fb7185;
-      border: 1px solid rgba(244, 63, 94, 0.35);
+      background: #ffe4e6;
+      color: #e11d48;
+      border: 1px solid #fecdd3;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 5px 14px;
+      padding: 6px 14px;
       border-radius: 20px;
-      margin-bottom: 16px;
-      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
-    /* Photo Frame Proposional */
+    /* Photo Frame */
     .photo-frame {
       width: 100%;
       aspect-ratio: 4 / 3;
       border-radius: 16px;
       overflow: hidden;
       margin-bottom: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      border: 2px solid #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
     }
 
     .photo-frame img {
@@ -146,12 +130,12 @@
     .card h2 {
       font-size: 1.35rem;
       font-weight: 700;
-      color: #f8fafc;
+      color: #1e293b;
       margin-bottom: 10px;
     }
 
     .card p {
-      color: #cbd5e1;
+      color: #475569;
       font-size: 0.9rem;
       line-height: 1.6;
       margin-bottom: 20px;
@@ -159,7 +143,7 @@
 
     /* Button */
     .btn {
-      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+      background: linear-gradient(135deg, #fda4af 0%, #f43f5e 100%);
       color: white;
       border: none;
       padding: 13px 24px;
@@ -167,7 +151,7 @@
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(244, 63, 94, 0.4);
+      box-shadow: 0 6px 18px rgba(244, 63, 94, 0.25);
       transition: all 0.2s ease;
       width: 100%;
     }
@@ -176,29 +160,37 @@
       transform: scale(0.97);
     }
 
-    /* Light Particles Effect */
-    .light-particle {
+    /* Floating Love Heart Effect */
+    .heart-particle {
       position: fixed;
-      background: #ffffff;
-      border-radius: 50%;
       pointer-events: none;
-      box-shadow: 0 0 12px #ffffff, 0 0 24px #fb7185;
-      animation: floatUp 2s ease-out forwards;
+      font-size: 1.2rem;
+      user-select: none;
+      animation: floatUpLove 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
       z-index: 10;
     }
 
-    @keyframes floatUp {
-      0% { opacity: 1; transform: translateY(0) scale(1); }
-      100% { opacity: 0; transform: translateY(-110px) scale(0.2); }
+    @keyframes floatUpLove {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.6) rotate(0deg);
+      }
+      50% {
+        opacity: 0.9;
+        transform: translate(var(--tw-x), -60px) scale(1.3) rotate(var(--tw-r));
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tw-x), -120px) scale(0.4) rotate(var(--tw-r));
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Glow & Love -->
+  <!-- Background Ambient Glow -->
   <div class="light-glow glow-1"></div>
   <div class="light-glow glow-2"></div>
-  <div class="stars"></div>
 
   <div class="wrapper">
 
@@ -209,22 +201,22 @@
         <img src="foto1.jpeg" alt="Foto 1">
       </div>
       <h2>Klik Sampai Abis Yaw..</h2>
-      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini</button>
+      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini..</button>
     </div>
 
- <!-- KARTU 2 -->
-    <div class="card active" id="card2">
+    <!-- KARTU 2 -->
+    <div class="card" id="card2">
       <span class="badge">A Special Wish</span>
       <div class="photo-frame">
         <img src="foto2.jpeg" alt="Foto 2">
       </div>
       <h2>Happy Birthday Sayang!!🥳🎉</h2>
-      <p>Selamat ulang tahun!! Ada beberapa upacapan singkat dari adik untuk sayangku...</p>
-      <button class="btn" onclick="nextCard(3, 4, event)">Kilik Disini Lagi</button>
+      <p>Selamat ulang tahun!! Ada beberapa ucapan singkat dari adik untuk sayangku...</p>
+      <button class="btn" onclick="nextCard(2, 3, event)">Klik Disini Lagi</button>
     </div>
 
     <!-- KARTU 3 -->
-    <div class="card active" id="card3">
+    <div class="card" id="card3">
       <span class="badge">in this relationship</span>
       <span class="badge">kita gapunya foto bagus🙂‍↔️</span>
       <div class="photo-frame">
@@ -232,40 +224,39 @@
       </div>
       <h2>Tapi Terima Kasih ✨</h2>
       <p>Terima kasih sudah selalu membawa kenyamanan, keceriaan, kelucuan, apalagi? kepercayaan di setiap momen ldr kita ini</p>
-      <button class="btn" onclick="nextCard(5, 6, event)">1 Lagi..</button>
+      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi.. </button>
     </div>
 
     <!-- KARTU 4 -->
-    <div class="card active" id="card4">
+    <div class="card" id="card4">
       <span class="badge">Secuil Doa</span>
       <div class="photo-frame">
-        <img src="foto4.jpeg" alt="Foto 3">
+        <img src="foto4.jpeg" alt="Foto 4">
       </div>
       <h2>Harapan Terbaik 🎂</h2>
-      <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu...
-      doa-doa baik untuk sayangku..</p>
-      <button class="btn" onclick="nextCard(6, event)">Terakhir</button>
+      <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu... doa-doa baik untuk sayangku..</p>
+      <button class="btn" onclick="nextCard(4, 5, event)">Terakhir </button>
     </div>
 
     <!-- KARTU 5 -->
-    <div class="card active" id="card5">
+    <div class="card" id="card5">
       <span class="badge">Pesan Terakhir</span>
       <div class="photo-frame">
-        <img src="foto6.jpeg" alt="Foto 4">
+        <img src="foto6.jpeg" alt="Foto 5">
       </div>
       <h2>Dahla Capek</h2>
-      <p><i>Alay kalau banyak-banyak</i></p>
-      <p> <i>Lebihnya doa sendiri yaww</i></p>
-        <br>Sekali lagi, Happy Birthday! 🥳✨
-        <button class="btn" onclick="nextCard(6, event)">Dah Habissss</button>
+      <p><i>Alay kalau banyak-banyak</i><br><i>Selebihnya doa sendiri yaww</i><br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
+      <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss </button>
     </div>
 
-     <!-- KARTU 6 -->
-    <div class="card active" id="card6">
+    <!-- KARTU 6 -->
+    <div class="card" id="card6">
       <span class="badge">Sekian Terima Gaji🙏🤙</span>
       <div class="photo-frame">
-        <img src="foto5.jpeg" alt="Foto 4">
+        <img src="foto5.jpeg" alt="Foto 6">
       </div>
+      <h2>Love You Sayang! 💖</h2>
+      <button class="btn" onclick="restartCards(event)">🔄</button>
     </div>
 
   </div>
@@ -274,32 +265,41 @@
     function nextCard(currentNum, nextNum, e) {
       document.getElementById('card' + currentNum).classList.remove('active');
       document.getElementById('card' + nextNum).classList.add('active');
-      createLightParticles(e);
+      createLoveParticles(e);
     }
 
     function restartCards(e) {
-      document.getElementById('card4').classList.remove('active');
+      document.getElementById('card6').classList.remove('active');
       document.getElementById('card1').classList.add('active');
-      createLightParticles(e);
+      createLoveParticles(e);
     }
 
-    function createLightParticles(e) {
-      for (let i = 0; i < 12; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('light-particle');
+    function createLoveParticles(e) {
+      const hearts = ['💖', '💕', '💗', '❤️', '🌸', '✨'];
+      
+      for (let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-particle');
         
-        const size = Math.random() * 5 + 4 + 'px';
-        particle.style.width = size;
-        particle.style.height = size;
+        // Pilih emoji love secara acak
+        heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
         
-        particle.style.left = (e.clientX + (Math.random() * 80 - 40)) + 'px';
-        particle.style.top = (e.clientY + (Math.random() * 20 - 10)) + 'px';
+        // Posisi klik
+        heart.style.left = e.clientX + 'px';
+        heart.style.top = e.clientY + 'px';
         
-        document.body.appendChild(particle);
+        // Arah terbang acak
+        const xOffset = (Math.random() * 120 - 60) + 'px';
+        const randomRotate = (Math.random() * 60 - 30) + 'deg';
+        
+        heart.style.setProperty('--tw-x', xOffset);
+        heart.style.setProperty('--tw-r', randomRotate);
+        
+        document.body.appendChild(heart);
 
         setTimeout(() => {
-          particle.remove();
-        }, 2000);
+          heart.remove();
+        }, 1800);
       }
     }
   </script>
