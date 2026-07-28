@@ -206,7 +206,7 @@
     <div class="card active" id="card1">
       <span class="badge">Karya Kecil dari Adik Kecil💃😘</span>
       <div class="photo-frame">
-        <img src="WhatsApp Image 2026-07-28 at 13.46.02.jpeg" alt="Foto 1">
+        <img src="foto1.jpeg" alt="Foto 1">
       </div>
       <h2>Klik-Klik Sampai Abis Yaw..</h2>
       <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini</button>
@@ -216,7 +216,7 @@
     <div class="card" id="card2">
       <span class="badge">A Special Wish</span>
       <div class="photo-frame">
-        <img src="https://www.google.com/imgres?q=animasi%20birthday%20lucu&imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F38%2Ff7%2F1a%2F38f71aa97bbd3b20a8e1981974df8596.jpg&imgrefurl=https%3A%2F%2Fid.pinterest.com%2Fsyaimaistkhmh%2Fbirthday-gif%2F&docid=URdwVLBDRcbVxM&tbnid=cNNRYmnsplTvCM&vet=12ahUKEwiJt-ew5PSVAxWo1jgGHX1lOZ4QnPAOegUIpAEQAA..i&w=235&h=237&hcb=2&ved=2ahUKEwiJt-ew5PSVAxWo1jgGHX1lOZ4QnPAOegUIpAEQAAw=500" alt="Foto 2">
+        <img src="foto2.jpeg" alt="Foto 2">
       </div>
       <h2>Happy Birthday Sayang!!🥳🎉</h2>
       <p>Selamat ulang tahun!! Ada beberapa upacapan singkat dari adik untuk sayangku...</p>
