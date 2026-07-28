@@ -220,7 +220,7 @@
       </div>
       <h2>Happy Birthday Sayang!!🥳🎉</h2>
       <p>Selamat ulang tahun!! Ada beberapa upacapan singkat dari adik untuk sayangku...</p>
-      <button class="btn" onclick="nextCard(2, 3, event)">Kilik Disini Lagi</button>
+      <button class="btn" onclick="nextCard(3, 4, event)">Kilik Disini Lagi</button>
     </div>
 
     <!-- KARTU 3 -->
@@ -232,7 +232,7 @@
       </div>
       <h2>Tapi Terima Kasih ✨</h2>
       <p>Terima kasih sudah selalu membawa kenyamanan, keceriaan, kelucuan, apalagi? kepercayaan di setiap momen ldr kita ini</p>
-      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi..</button>
+      <button class="btn" onclick="nextCard(5, 6, event)">1 Lagi..</button>
     </div>
 
     <!-- KARTU 4 -->
@@ -244,7 +244,7 @@
       <h2>Harapan Terbaik 🎂</h2>
       <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu...
       doa-doa baik untuk sayangku..</p>
-      <button class="btn" onclick="nextCard(4, 5, event)">Terakhir</button>
+      <button class="btn" onclick="nextCard(6, event)">Terakhir</button>
     </div>
 
     <!-- KARTU 5 -->
@@ -257,7 +257,7 @@
       <p><i>Alay kalau banyak-banyak</i></p>
       <p> <i>Lebihnya doa sendiri yaww</i></p>
         <br>Sekali lagi, Happy Birthday! 🥳✨
-        <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss</button>
+        <button class="btn" onclick="nextCard(6, event)">Dah Habissss</button>
     </div>
 
      <!-- KARTU 6 -->
