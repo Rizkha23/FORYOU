@@ -242,7 +242,7 @@
         <img src="foto4.jpeg" alt="Foto 3">
       </div>
       <h2>Harapan Terbaik 🎂</h2>
-      <p>Semoga di usiamu yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu...
+      <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu...
       doa-doa baik untuk sayangku..</p>
       <button class="btn" onclick="nextCard(4, 5, event)">Terakhir</button>
     </div>
@@ -264,7 +264,7 @@
     <div class="card active" id="card6">
       <span class="badge">Sekian Terima Gaji🙏🤙</span>
       <div class="photo-frame">
-        <img src="foto6.jpeg" alt="Foto 4">
+        <img src="foto5.jpeg" alt="Foto 4">
       </div>
     </div>
 
