@@ -209,7 +209,7 @@
         <img src="foto1.jpeg" alt="Foto 1">
       </div>
       <h2>Klik Sampai Abis Yaw..</h2>
-      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini</button>
+      <button class="btn" onclick="nextCard(2, event)">Klik Disini</button>
     </div>
 
  <!-- KARTU 2 -->
