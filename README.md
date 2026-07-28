@@ -219,7 +219,7 @@
         <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="Foto 2">
       </div>
       <h2>Happy Birthday Sayang!!🥳🎉</h2>
-      <p>Selamat ulang tahun!! Ada beberapa upacapan singkat dari adik unutk sayangku...</p>
+      <p>Selamat ulang tahun!! Ada beberapa upacapan singkat dari adik untuk sayangku...</p>
       <button class="btn" onclick="nextCard(2, 3, event)">Kilik Disini Lagi</button>
     </div>
 
