@@ -225,13 +225,14 @@
 
     <!-- KARTU 3 -->
     <div class="card active" id="card3">
-      <span class="badge">📸</span>
+      <span class="badge">in this relationship</span>
+      <span class="badge">kita gapunya foto bagus🙂‍↔️</span>
       <div class="photo-frame">
-        <img src="foto3.jpeg" alt="Foto 3">
+        <img src="foto7.jpeg" alt="Foto 3">
       </div>
-      <h2>Terima Kasih ✨</h2>
-      <p>Terima kasih sudah selalu membawa kelucuan, keceriaan dan kepercayaan di setiap momen ldr kita ini</p>
-      <button class="btn" onclick="nextCard(2, 3, event)">1 Lagi..</button>
+      <h2>Tapi Terima Kasih ✨</h2>
+      <p>Terima kasih sudah selalu membawa kenyamanan, keceriaan, kelucuan, apalagi? kepercayaan di setiap momen ldr kita ini</p>
+      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi..</button>
     </div>
 
     <!-- KARTU 4 -->
@@ -243,7 +244,7 @@
       <h2>Harapan Terbaik 🎂</h2>
       <p>Semoga di usiamu yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu...
       doa-doa baik untuk sayangku..</p>
-      <button class="btn" onclick="nextCard(3, 4, event)">Terakhir</button>
+      <button class="btn" onclick="nextCard(4, 5, event)">Terakhir</button>
     </div>
 
     <!-- KARTU 5 -->
@@ -256,7 +257,7 @@
       <p><i>Alay kalau banyak-banyak</i>
         <i>Lebihnya doa sendiri dah besyarrr</i>
         <br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
-      <button class="btn" onclick="restartCards(event)">Dah Habisss</button>
+        <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss</button>
     </div>
 
      <!-- KARTU 6 -->
