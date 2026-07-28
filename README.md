@@ -224,7 +224,18 @@
 
   <div class="card-container">
 
-    <!-- KARTU 1 -->
+   <!-- KARTU 1 -->
+<div class="card active" id="card1">
+  <span class="badge">ALOW✨</span>
+  <div class="photo-frame">
+    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500" alt="Foto 1">
+  </div>
+  <h2>Ucapan Kecil dari Adik Kecil 😘</h2>
+  <p>Klik - Klik ajalah ya..</p>
+  <button class="btn" onclick="nextCard(1, 2, event)">Lanjut ➡️</button>
+</div>
+    
+    <!-- KARTU 2 -->
     <div class="card active" id="card1">
       <span class="badge">A Special Wish ✨</span>
       <div class="photo-frame">
@@ -235,7 +246,7 @@
       <button class="btn" onclick="nextCard(1, 2, event)">Lanjut ➡️</button>
     </div>
 
-    <!-- KARTU 2 -->
+    <!-- KARTU 3 -->
     <div class="card" id="card2">
       <span class="badge">Kenangan & Momen 📸</span>
       <div class="photo-frame">
@@ -246,7 +257,7 @@
       <button class="btn" onclick="nextCard(2, 3, event)">Lanjut Lagi ➡️</button>
     </div>
 
-    <!-- KARTU 3 -->
+    <!-- KARTU 4 -->
     <div class="card" id="card3">
       <span class="badge">Doa Untukmu 🌟</span>
       <div class="photo-frame">
@@ -257,7 +268,7 @@
       <button class="btn" onclick="nextCard(3, 4, event)">Pesan Terakhir 💌</button>
     </div>
 
-    <!-- KARTU 4 (KARTU PENUTUP) -->
+    <!-- KARTU 5 (KARTU PENUTUP) -->
     <div class="card" id="card4">
       <span class="badge">Pesan Terakhir 💖</span>
       <div class="photo-frame">
