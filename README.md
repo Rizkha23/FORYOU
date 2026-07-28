@@ -14,110 +14,148 @@
 
     body {
       min-height: 100vh;
-      background: #0f172a;
-      padding: 40px 20px;
-      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Background gradasi dinamis */
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 40%, #1e1b4b 70%, #090d16 100%);
+      padding: 20px;
+      overflow: hidden;
       position: relative;
       color: #f8fafc;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
-    /* Ambient Glow Background */
+    /* Ambient Glowing Background Lights */
     .light-glow {
-      position: fixed;
+      position: absolute;
       border-radius: 50%;
       filter: blur(90px);
-      opacity: 0.5;
+      opacity: 0.65;
       pointer-events: none;
-      z-index: 1;
+      animation: pulseGlow 10s infinite alternate ease-in-out;
     }
 
     .glow-1 {
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, #f43f5e 0%, rgba(244, 63, 94, 0) 70%);
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, #e11d48 0%, rgba(225, 29, 72, 0) 70%);
       top: -10%;
       left: -10%;
     }
 
     .glow-2 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #8b5cf6 0%, rgba(139, 92, 246, 0) 70%);
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, #7c3aed 0%, rgba(124, 58, 237, 0) 70%);
       bottom: -10%;
       right: -10%;
+      animation-delay: -5s;
     }
 
-    /* Header Section */
-    .header-title {
-      text-align: center;
-      margin-bottom: 30px;
-      z-index: 2;
+    .glow-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #2563eb 0%, rgba(37, 99, 235, 0) 70%);
+      top: 30%;
+      left: 40%;
+      animation-delay: -2s;
     }
 
-    .header-title h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ffffff 0%, #fb7185 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 6px;
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+      100% { transform: scale(1.25) translate(20px, -20px); opacity: 0.85; }
     }
 
-    .header-title p {
-      color: #94a3b8;
-      font-size: 0.95rem;
-    }
-
-    /* Cards Container */
-    .cards-container {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      max-width: 390px;
+    /* Background Star Twinkle Effect */
+    .stars {
+      position: absolute;
       width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background: radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 40px 70px, #fb7185, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 80px 120px, #ffffff, rgba(0,0,0,0)),
+                  radial-gradient(3px 3px at 150px 200px, #a78bfa, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 280px 300px, #ffffff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 300px 300px;
+      opacity: 0.4;
+      animation: twinkle 4s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Card Box Glassmorphism */
+    .card-container {
+      position: relative;
+      max-width: 380px;
+      width: 100%;
+      min-height: 480px;
       z-index: 2;
     }
 
-    /* Individual Card Glassmorphism */
     .card {
-      background: rgba(30, 41, 59, 0.65);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 24px;
-      padding: 24px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(30, 41, 59, 0.55);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-radius: 28px;
+      padding: 28px 24px;
       text-align: center;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
-                  inset 0 1px 1px rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      
+      /* Transiton & Animation */
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .card-step {
+    .card.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .card.exit {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.95);
+      pointer-events: none;
+    }
+
+    .badge {
       display: inline-block;
-      background: rgba(244, 63, 94, 0.15);
+      background: rgba(244, 63, 94, 0.18);
       color: #fb7185;
-      border: 1px solid rgba(244, 63, 94, 0.3);
-      font-size: 0.75rem;
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      font-size: 0.78rem;
       font-weight: 700;
-      padding: 4px 14px;
+      padding: 5px 16px;
       border-radius: 20px;
-      margin-bottom: 14px;
-      letter-spacing: 0.8px;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    /* Card Photo */
+    /* Photo Frame */
     .photo-frame {
       width: 100%;
-      height: 180px;
-      border-radius: 16px;
+      height: 200px;
+      border-radius: 20px;
       overflow: hidden;
-      margin-bottom: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
 
     .photo-frame img {
@@ -127,158 +165,153 @@
     }
 
     .card h2 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      font-weight: 700;
       color: #f8fafc;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    /* Collapsible Message Box */
-    .message-box {
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      opacity: 0;
-      background: rgba(15, 23, 42, 0.5);
-      border-radius: 14px;
-      padding: 0 14px;
-      text-align: left;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .message-box.open {
-      max-height: 250px;
-      opacity: 1;
-      padding: 16px 14px;
-      margin-bottom: 16px;
-    }
-
-    .message-box p {
+    .card p {
       color: #cbd5e1;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       line-height: 1.6;
+      margin-bottom: 24px;
     }
 
-    /* Buttons */
+    /* Button */
     .btn {
       background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
       color: white;
       border: none;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border-radius: 50px;
       font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(244, 63, 94, 0.35);
+      box-shadow: 0 8px 25px rgba(244, 63, 94, 0.4);
       transition: all 0.2s ease;
       width: 100%;
     }
 
     .btn:active {
-      transform: scale(0.97);
+      transform: scale(0.96);
     }
 
     /* Light Particles */
     .light-particle {
-      position: absolute;
+      position: fixed;
       background: #ffffff;
       border-radius: 50%;
       pointer-events: none;
-      box-shadow: 0 0 10px #ffffff, 0 0 20px #fb7185;
-      animation: floatUp 2s ease-out forwards;
+      box-shadow: 0 0 12px #ffffff, 0 0 24px #fb7185;
+      animation: floatUp 2.2s ease-out forwards;
+      z-index: 10;
     }
 
     @keyframes floatUp {
       0% { opacity: 1; transform: translateY(0) scale(1); }
-      100% { opacity: 0; transform: translateY(-100px) scale(0.2); }
+      100% { opacity: 0; transform: translateY(-130px) scale(0.2); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Glows -->
+  <!-- Glowing Background & Stars -->
   <div class="light-glow glow-1"></div>
   <div class="light-glow glow-2"></div>
+  <div class="light-glow glow-3"></div>
+  <div class="stars"></div>
 
-  <!-- Header -->
-  <div class="header-title">
-    <h1>Happy Birthday! 🎉</h1>
-    <p>Scroll ke bawah untuk melihat pesan ✨</p>
-  </div>
+  <div class="card-container">
 
-  <!-- Cards Container -->
-  <div class="cards-container">
-
-    <!-- Card 1 -->
-    <div class="card">
-      <span class="card-step">Card 01</span>
+    <!-- KARTU 1 -->
+    <div class="card active" id="card1">
+      <span class="badge">A Special Wish ✨</span>
       <div class="photo-frame">
-        <!-- Ganti tautan gambar di bawah ini -->
-        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500" alt="Momen 1">
+        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500" alt="Foto 1">
       </div>
-      <h2>Kenangan Pertama 📸</h2>
-      <div class="message-box" id="msg1">
-        <p>
-          Terima kasih sudah menjadi sosok yang selalu membawa keceriaan. Setiap momen yang dihabiskan bersamamu selalu terasa seru dan berkesan! ✨
-        </p>
-      </div>
-      <button class="btn" onclick="toggleCard(this, 'msg1', event)">Buka Pesan 💌</button>
+      <h2>Happy Birthday! 🎉</h2>
+      <p>Selamat ulang tahun! Ada beberapa hal yang ingin aku sampaikan di hari spesialmu ini...</p>
+      <button class="btn" onclick="nextCard(1, 2, event)">Lanjut ➡️</button>
     </div>
 
-    <!-- Card 2 -->
-    <div class="card">
-      <span class="card-step">Card 02</span>
+    <!-- KARTU 2 -->
+    <div class="card" id="card2">
+      <span class="badge">Kenangan & Momen 📸</span>
       <div class="photo-frame">
-        <!-- Ganti tautan gambar di bawah ini -->
-        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="Momen 2">
+        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="Foto 2">
       </div>
-      <h2>Doa & Harapan 🌟</h2>
-      <div class="message-box" id="msg2">
-        <p>
-          Semoga di usiamu yang baru ini, kamu semakin dekat dengan semua impianmu, selalu dikelilingi orang-orang baik, dan sehat selalu. 🤲🎂
-        </p>
-      </div>
-      <button class="btn" onclick="toggleCard(this, 'msg2', event)">Buka Pesan 💌</button>
+      <h2>Terima Kasih ✨</h2>
+      <p>Terima kasih ya sudah selalu membawa keceriaan dan tawa. Semua momen bersamamu selalu jadi kenangan yang menyenangkan!</p>
+      <button class="btn" onclick="nextCard(2, 3, event)">Lanjut Lagi ➡️</button>
     </div>
 
-    <!-- Card 3 -->
-    <div class="card">
-      <span class="card-step">Card 03</span>
+    <!-- KARTU 3 -->
+    <div class="card" id="card3">
+      <span class="badge">Doa Untukmu 🌟</span>
       <div class="photo-frame">
-        <!-- Ganti tautan gambar di bawah ini -->
-        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500" alt="Momen 3">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500" alt="Foto 3">
       </div>
-      <h2>Pesan Spesial 💖</h2>
-      <div class="message-box" id="msg3">
-        <p>
-          <i>"Tetaplah tumbuh dan bersinar dengan caramu sendiri."</i><br><br>
-          Sekali lagi, Selamat Ulang Tahun! Bahagia selalu ya! 🎉✨
-        </p>
+      <h2>Harapan Terbaik 🎂</h2>
+      <p>Semoga di usiamu yang baru ini, setiap impianmu dipermudah, selalu diberi kesehatan, dan dikelilingi oleh kebahagiaan.</p>
+      <button class="btn" onclick="nextCard(3, 4, event)">Pesan Terakhir 💌</button>
+    </div>
+
+    <!-- KARTU 4 (KARTU PENUTUP) -->
+    <div class="card" id="card4">
+      <span class="badge">Pesan Terakhir 💖</span>
+      <div class="photo-frame">
+        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500" alt="Foto 4">
       </div>
-      <button class="btn" onclick="toggleCard(this, 'msg3', event)">Buka Pesan 💌</button>
+      <h2>Tetap Bersinar! 🌟</h2>
+      <p><i>"Tetaplah tumbuh dan bersinar dengan caramu sendiri."</i><br><br>Sekali lagi, Happy Birthday! Enjoy your day! 🥳✨</p>
+      <button class="btn" onclick="restartCards(event)">Ulangi Dari Awal 🔄</button>
     </div>
 
   </div>
 
   <script>
-    function toggleCard(btn, msgId, e) {
-      const msg = document.getElementById(msgId);
-      
-      if (!msg.classList.contains('open')) {
-        msg.classList.add('open');
-        btn.innerText = 'Tutup Pesan ✨';
-        createLightParticles(e);
-      } else {
-        msg.classList.remove('open');
-        btn.innerText = 'Buka Pesan 💌';
+    function nextCard(currentNum, nextNum, e) {
+      const currentCard = document.getElementById('card' + currentNum);
+      const nextCard = document.getElementById('card' + nextNum);
+
+      // Animasi keluar untuk kartu sekarang
+      currentCard.classList.remove('active');
+      currentCard.classList.add('exit');
+
+      // Animasi masuk untuk kartu berikutnya
+      setTimeout(() => {
+        nextCard.classList.add('active');
+      }, 200);
+
+      createLightParticles(e);
+    }
+
+    function restartCards(e) {
+      // Sembunyikan kartu terakhir
+      const card4 = document.getElementById('card4');
+      card4.classList.remove('active');
+
+      // Kembalikan semua kartu ke kondisi awal
+      for (let i = 1; i <= 4; i++) {
+        const c = document.getElementById('card' + i);
+        c.classList.remove('exit');
       }
+
+      // Tampilkan kembali kartu 1
+      setTimeout(() => {
+        document.getElementById('card1').classList.add('active');
+      }, 300);
+
+      createLightParticles(e);
     }
 
     function createLightParticles(e) {
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < 16; i++) {
         const particle = document.createElement('div');
         particle.classList.add('light-particle');
         
-        const size = Math.random() * 5 + 4 + 'px';
+        const size = Math.random() * 6 + 4 + 'px';
         particle.style.width = size;
         particle.style.height = size;
         
@@ -289,7 +322,7 @@
 
         setTimeout(() => {
           particle.remove();
-        }, 2000);
+        }, 2200);
       }
     }
   </script>
