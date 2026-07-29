@@ -346,13 +346,14 @@
       <button class="btn" onclick="nextCard('card1', 'cardCalendar', event)">Klik Disini</button>
     </div>
       
-     <!-- KARTU KALENDER (SUDAH DISESUAIKAN) -->
+     <!-- KARTU KALENDER (SESUAI KALENDER SEBENARNYA) -->
     <div class="card" id="cardCalendar">
       <span class="badge">A Very Special Day 🗓️</span>
       
       <div class="calendar-box">
-        <div class="calendar-header">September 2026 💖</div>
+        <div class="calendar-header">Septembeer 2026 💖</div>
         <div class="calendar-grid">
+          <!-- Nama Hari -->
           <div class="day-name">Min</div>
           <div class="day-name">Sen</div>
           <div class="day-name">Sel</div>
@@ -361,14 +362,11 @@
           <div class="day-name">Jum</div>
           <div class="day-name">Sab</div>
 
-          <!-- Offset Kosong (Minggu - Kamis) agar Tanggal 1 Mulai di Hari Jumat -->
-          <div class="day-num empty"></div>
-          <div class="day-num empty"></div>
-          <div class="day-num empty"></div>
+          <!-- Kosongkan Minggu & Senin agar Tanggal 1 Mulai di Selasa -->
           <div class="day-num empty"></div>
           <div class="day-num empty"></div>
 
-          <!-- Angka Tanggal -->
+          <!-- Hari 1 Sampai Seterusnya -->
           <div class="day-num">1</div>
           <div class="day-num">2</div>
           <div class="day-num">3</div>
@@ -391,10 +389,10 @@
           <div class="day-num">20</div>
           <div class="day-num">21</div>
           <div class="day-num">22</div>
-
-          <!-- Tanggal 23 Ulang Tahun (Pas di Hari Rabu) -->
+          
+          <!-- Tanggal 23 di Hari Rabu (Melayang & Dilingkari) -->
           <div class="day-num birthday">23 🎂</div>
-
+          
           <div class="day-num">24</div>
           <div class="day-num">25</div>
           <div class="day-num">26</div>
@@ -406,6 +404,8 @@
         </div>
       </div>
 
+      <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan ➡️</button>
+    </div>
       <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan</button>
     </div>
     <!-- KARTU 2 -->
