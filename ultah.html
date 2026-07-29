@@ -251,8 +251,9 @@
       <div class="photo-frame">
         <img src="foto2.jpeg" alt="Foto 2">
       </div>
-      <h2>Happy Birthday Sayang!!🥳🎉</h2>
-      <p>Selamat ulang tahun!! Ada beberapa ucapan singkat dari adik untuk sayangku...</p>
+      <h2>Selamat ulang tahun Sayangkuu!!🥳🎉</h2>
+      <h3>Partner Tanggal Lahirkuuuuu</h3>
+      <p>Ada beberapa ucapan singkat dari adik untuk sayangku...</p>
       <button class="btn" onclick="nextCard(2, 3, event)">Klik Disini Lagi</button>
     </div>
 
@@ -313,7 +314,7 @@
       <div class="photo-frame">
         <img src="foto5.jpeg" alt="Foto 6">
       </div>
-      <h2>I Love You! 💖</h2>
+      <h2>Love You Sayanggg! 💖</h2>
       <button class="btn" onclick="restartCards(event)">Syudahhh Papayy</button>
     </div>
 
