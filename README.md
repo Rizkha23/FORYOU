@@ -392,6 +392,7 @@
           <div class="day-num">28</div>
           <div class="day-num">29</div>
           <div class="day-num">30</div>
+        </div>
       </div>
 
       <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut...</button>
@@ -574,3 +575,4 @@
   </script>
 </body>
 </html>
+
