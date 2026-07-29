@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -16,7 +17,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      /* Background Pastel Transisi Halus */
       background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 35%, #fef9c3 65%, #ffe4e6 100%);
       background-size: 300% 300%;
       animation: pastelShift 12s ease infinite;
@@ -175,6 +175,13 @@
       margin-bottom: 10px;
     }
 
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 10px;
+    }
+
     .card p {
       color: #475569;
       font-size: 0.9rem;
@@ -222,9 +229,37 @@
         transform: translate(var(--tw-x), -100px) scale(0.2);
       }
     }
+
+    /* Tombol Kontrol Musik di Pojok Kanan Atas */
+    .music-control {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Audio Element (Ganti 'musik.mp3' dengan file musikmu) -->
+  <audio id="bgMusic" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Tombol Toggle Musik -->
+  <button class="music-control" id="musicBtn" onclick="toggleMusic()">🎵</button>
 
   <!-- Background Ambient Glow -->
   <div class="light-glow glow-1"></div>
@@ -291,7 +326,7 @@
       <button class="btn" onclick="nextCard(5, 6, event)">1 Lagi</button>
     </div>
 
-<!-- KARTU 6 -->
+    <!-- KARTU 6 -->
     <div class="card" id="card6">
       <span class="badge">Plot Twist : Aku Kangen</span>
       <div class="photo-frame">
@@ -324,6 +359,23 @@
   </div>
 
   <script>
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    let isMusicPlaying = false;
+
+    // Fungsi untuk Play/Pause Musik secara Manual
+    function toggleMusic() {
+      if (isMusicPlaying) {
+        music.pause();
+        musicBtn.innerText = '🔇';
+        isMusicPlaying = false;
+      } else {
+        music.play();
+        musicBtn.innerText = '🎵';
+        isMusicPlaying = true;
+      }
+    }
+
     // Partikel Cahaya Melayang di Background
     function createBgSparkles() {
       const container = document.getElementById('bgSparkleContainer');
@@ -335,7 +387,6 @@
         
         sparkle.style.left = Math.random() * 100 + '%';
         
-        // Ukuran partikel bercahaya acak
         const size = (Math.random() * 8 + 4) + 'px';
         sparkle.style.width = size;
         sparkle.style.height = size;
@@ -353,16 +404,25 @@
     createBgSparkles();
 
     function nextCard(currentNum, nextNum, e) {
+      // Putar musik otomatis saat pertama kali tombol diklik
+      if (!isMusicPlaying) {
+        music.play().then(() => {
+          isMusicPlaying = true;
+          musicBtn.innerText = '🎵';
+        }).catch(err => console.log("Autoplay diblokir browser: " + err));
+      }
+
       document.getElementById('card' + currentNum).classList.remove('active');
       document.getElementById('card' + nextNum).classList.add('active');
       createClickSparkles(e);
     }
 
-function restartCards(e) {
-  document.getElementById('card8').classList.remove('active'); // <-- Diubah ke card8
-  document.getElementById('card1').classList.add('active');
-  createClickSparkles(e);
-}
+    function restartCards(e) {
+      // Menghapus kelas active dari semua kartu agar tidak crash/lengket lagi
+      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+      document.getElementById('card1').classList.add('active');
+      createClickSparkles(e);
+    }
 
     // Partikel Cahaya saat Klik
     function createClickSparkles(e) {
