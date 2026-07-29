@@ -287,12 +287,12 @@
         <img src="foto6.jpeg" alt="Foto 5">
       </div>
       <h2>Dahla Capek</h2>
-      <p><i>Alay kalau banyak-banyak</i><br><i>Lebihnya doa sendiri yaww</i><br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
+      <p><i>Alay kalau banyak-banyak</i><br><i>Lebihnya doa sendiri yaww</i></p>
       <button class="btn" onclick="nextCard(5, 6, event)">1 Lagi</button>
     </div>
 
 <!-- KARTU 6 -->
-    <div class="card" id="card5">
+    <div class="card" id="card6">
       <span class="badge">Plot Twist : Aku Kangen</span>
       <div class="photo-frame">
         <img src="foto8.jpeg" alt="Foto 5">
@@ -303,13 +303,13 @@
     </div>
 
     <!-- KARTU 7 -->
-    <div class="card" id="card5">
+    <div class="card" id="card7">
       <span class="badge">Hitung Mundur Sampai Ketemu</span>
       <button class="btn" onclick="nextCard(7, 8, event)">Dah Habissss</button>
     </div>
 
     <!-- KARTU 8 -->
-    <div class="card" id="card6">
+    <div class="card" id="card8">
       <span class="badge">Sekian Terima Gaji🙏🤙</span>
       <div class="photo-frame">
         <img src="foto5.jpeg" alt="Foto 6">
