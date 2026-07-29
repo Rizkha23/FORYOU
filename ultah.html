@@ -358,11 +358,11 @@
       createClickSparkles(e);
     }
 
-    function restartCards(e) {
-      document.getElementById('card6').classList.remove('active');
-      document.getElementById('card1').classList.add('active');
-      createClickSparkles(e);
-    }
+function restartCards(e) {
+  document.getElementById('card8').classList.remove('active'); // <-- Diubah ke card8
+  document.getElementById('card1').classList.add('active');
+  createClickSparkles(e);
+}
 
     // Partikel Cahaya saat Klik
     function createClickSparkles(e) {
