@@ -305,6 +305,9 @@
     <!-- KARTU 7 -->
     <div class="card" id="card7">
       <span class="badge">Hitung Mundur Sampai Ketemu</span>
+      <div class="photo-frame">
+        <img src="foto9.jpeg" alt="Foto 5">
+      </div>
       <button class="btn" onclick="nextCard(7, 8, event)">Dah Habissss</button>
     </div>
 
