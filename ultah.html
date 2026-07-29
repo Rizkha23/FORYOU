@@ -16,12 +16,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      /* Background Pastel (Hijau, Kuning, Merah Muda, Biru Muda) */
+      /* Background Pastel Transisi Halus */
       background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 35%, #fef9c3 65%, #ffe4e6 100%);
       background-size: 300% 300%;
       animation: pastelShift 12s ease infinite;
       padding: 20px;
-      overflow-x: hidden;
+      overflow: hidden;
       position: relative;
       color: #334155;
     }
@@ -57,6 +57,47 @@
       right: -5%;
     }
 
+    /* Container untuk Love Flying Background */
+    .bg-heart-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    /* Partikel Love Melayang di Background */
+    .floating-bg-heart {
+      position: absolute;
+      bottom: -40px;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0;
+      filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.4));
+      animation: floatBgLove var(--duration) ease-in-out infinite;
+      animation-delay: var(--delay);
+    }
+
+    @keyframes floatBgLove {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5) rotate(0deg);
+      }
+      20% {
+        opacity: 0.7;
+      }
+      80% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-105vh) scale(1.2) rotate(var(--rotation));
+      }
+    }
+
     /* Outer Wrapper */
     .wrapper {
       width: 100%;
@@ -67,15 +108,15 @@
     /* Card Styling */
     .card {
       display: none;
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 24px;
       padding: 24px;
       text-align: center;
       box-shadow: 0 15px 35px rgba(148, 163, 184, 0.25),
-                  inset 0 1px 1px rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.6);
+                  inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       width: 100%;
     }
 
@@ -159,14 +200,15 @@
       transform: scale(0.97);
     }
 
-    /* Floating Love Heart Effect */
+    /* Floating Love Heart Effect saat Klik Tombol */
     .heart-particle {
       position: fixed;
       pointer-events: none;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       user-select: none;
       animation: floatUpLove 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
       z-index: 10;
+      filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.5));
     }
 
     @keyframes floatUpLove {
@@ -191,6 +233,9 @@
   <div class="light-glow glow-1"></div>
   <div class="light-glow glow-2"></div>
 
+  <!-- Container Cahaya Love Berterbangan -->
+  <div class="bg-heart-container" id="bgHeartContainer"></div>
+
   <div class="wrapper">
 
     <!-- KARTU 1 -->
@@ -200,7 +245,7 @@
         <img src="foto1.jpeg" alt="Foto 1">
       </div>
       <h2>Klik Sampai Abis Yaw..</h2>
-      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini..</button>
+      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini ➡️</button>
     </div>
 
     <!-- KARTU 2 -->
@@ -211,7 +256,7 @@
       </div>
       <h2>Happy Birthday Sayang!!🥳🎉</h2>
       <p>Selamat ulang tahun!! Ada beberapa ucapan singkat dari adik untuk sayangku...</p>
-      <button class="btn" onclick="nextCard(2, 3, event)">Klik Disini Lagi</button>
+      <button class="btn" onclick="nextCard(2, 3, event)">Klik Disini Lagi ➡️</button>
     </div>
 
     <!-- KARTU 3 -->
@@ -223,7 +268,7 @@
       </div>
       <h2>Tapi Terima Kasih ✨</h2>
       <p>Terima kasih sudah selalu membawa kenyamanan, keceriaan, kelucuan, apalagi? kepercayaan di setiap momen ldr kita ini</p>
-      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi.. </button>
+      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi.. ➡️</button>
     </div>
 
     <!-- KARTU 4 -->
@@ -234,7 +279,7 @@
       </div>
       <h2>Harapan Terbaik 🎂</h2>
       <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu... doa-doa baik untuk sayangku..</p>
-      <button class="btn" onclick="nextCard(4, 5, event)">Terakhir </button>
+      <button class="btn" onclick="nextCard(4, 5, event)">Terakhir ➡️</button>
     </div>
 
     <!-- KARTU 5 -->
@@ -245,7 +290,7 @@
       </div>
       <h2>Dahla Capek</h2>
       <p><i>Alay kalau banyak-banyak</i><br><i>Lebihnya doa sendiri yaww</i><br><br>Sekali lagi, Happy Birthday! 🥳✨</p>
-      <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss </button>
+      <button class="btn" onclick="nextCard(5, 6, event)">Dah Habissss ➡️</button>
     </div>
 
     <!-- KARTU 6 -->
@@ -254,13 +299,48 @@
       <div class="photo-frame">
         <img src="foto5.jpeg" alt="Foto 6">
       </div>
-      <h2>Love You Sayang! 💖</h2>
-      <button class="btn" onclick="restartCards(event)">🔄</button>
+      <h2>I Love You! 💖</h2>
+      <button class="btn" onclick="restartCards(event)">Ulang dari Awal 🔄</button>
     </div>
 
   </div>
 
   <script>
+    // Membuat Cahaya Love Berterbangan di Latar Belakang
+    function createBgHearts() {
+      const container = document.getElementById('bgHeartContainer');
+      const heartIcons = ['💖', '💕', '✨', '🌸', '💗', '❤️'];
+      const totalHearts = 20;
+
+      for (let i = 0; i < totalHearts; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-bg-heart');
+        
+        heart.innerText = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+        
+        // Posisi horizontal acak di seluruh lebar layar
+        heart.style.left = Math.random() * 100 + '%';
+        
+        // Ukuran bervariasi agar ada efek kedalaman (depth)
+        const fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+        heart.style.fontSize = fontSize;
+        
+        // Durasi & Delay acak agar penerbangan tidak berbarengan
+        const duration = (Math.random() * 6 + 7) + 's';
+        const delay = (Math.random() * 8) + 's';
+        const rotation = (Math.random() * 90 - 45) + 'deg';
+
+        heart.style.setProperty('--duration', duration);
+        heart.style.setProperty('--delay', delay);
+        heart.style.setProperty('--rotation', rotation);
+
+        container.appendChild(heart);
+      }
+    }
+
+    // Jalankan efek background saat halaman dimuat
+    createBgHearts();
+
     function nextCard(currentNum, nextNum, e) {
       document.getElementById('card' + currentNum).classList.remove('active');
       document.getElementById('card' + nextNum).classList.add('active');
@@ -280,14 +360,11 @@
         const heart = document.createElement('div');
         heart.classList.add('heart-particle');
         
-        // Pilih emoji love secara acak
         heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
         
-        // Posisi klik
         heart.style.left = e.clientX + 'px';
         heart.style.top = e.clientY + 'px';
         
-        // Arah terbang acak
         const xOffset = (Math.random() * 120 - 60) + 'px';
         const randomRotate = (Math.random() * 60 - 30) + 'deg';
         
