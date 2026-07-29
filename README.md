@@ -319,8 +319,6 @@
     </div>
 
   </div>
-  </div>
-  </div>
 
   <script>
     // Partikel Cahaya Melayang di Background
