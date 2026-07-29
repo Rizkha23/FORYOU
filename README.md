@@ -57,8 +57,8 @@
       right: -5%;
     }
 
-    /* Container untuk Love Flying Background */
-    .bg-heart-container {
+    /* Container untuk Partikel Cahaya Background */
+    .bg-sparkle-container {
       position: fixed;
       top: 0;
       left: 0;
@@ -69,32 +69,33 @@
       overflow: hidden;
     }
 
-    /* Partikel Love Melayang di Background */
-    .floating-bg-heart {
+    /* Partikel Cahaya Melayang di Background */
+    .floating-bg-sparkle {
       position: absolute;
-      bottom: -40px;
-      user-select: none;
+      bottom: -20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 0%, #fda4af 60%, rgba(253, 164, 175, 0) 100%);
+      box-shadow: 0 0 10px #ffffff, 0 0 20px #fda4af;
       pointer-events: none;
       opacity: 0;
-      filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.4));
-      animation: floatBgLove var(--duration) ease-in-out infinite;
+      animation: floatBgSparkle var(--duration) ease-in-out infinite;
       animation-delay: var(--delay);
     }
 
-    @keyframes floatBgLove {
+    @keyframes floatBgSparkle {
       0% {
         opacity: 0;
-        transform: translateY(0) scale(0.5) rotate(0deg);
+        transform: translateY(0) scale(0.5);
       }
-      20% {
-        opacity: 0.7;
+      30% {
+        opacity: 0.8;
       }
-      80% {
-        opacity: 0.7;
+      70% {
+        opacity: 0.8;
       }
       100% {
         opacity: 0;
-        transform: translateY(-105vh) scale(1.2) rotate(var(--rotation));
+        transform: translateY(-105vh) scale(1.5);
       }
     }
 
@@ -200,29 +201,25 @@
       transform: scale(0.97);
     }
 
-    /* Floating Love Heart Effect saat Klik Tombol */
-    .heart-particle {
+    /* Partikel Cahaya saat Klik Tombol */
+    .click-sparkle {
       position: fixed;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 10px #ffffff, 0 0 20px #fb7185;
       pointer-events: none;
-      font-size: 1.3rem;
-      user-select: none;
-      animation: floatUpLove 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      animation: floatUpSparkle 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
       z-index: 10;
-      filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.5));
     }
 
-    @keyframes floatUpLove {
+    @keyframes floatUpSparkle {
       0% {
         opacity: 1;
-        transform: translate(0, 0) scale(0.6) rotate(0deg);
-      }
-      50% {
-        opacity: 0.9;
-        transform: translate(var(--tw-x), -60px) scale(1.3) rotate(var(--tw-r));
+        transform: translate(0, 0) scale(1);
       }
       100% {
         opacity: 0;
-        transform: translate(var(--tw-x), -120px) scale(0.4) rotate(var(--tw-r));
+        transform: translate(var(--tw-x), -100px) scale(0.2);
       }
     }
   </style>
@@ -233,8 +230,8 @@
   <div class="light-glow glow-1"></div>
   <div class="light-glow glow-2"></div>
 
-  <!-- Container Cahaya Love Berterbangan -->
-  <div class="bg-heart-container" id="bgHeartContainer"></div>
+  <!-- Container Partikel Cahaya Berterbangan -->
+  <div class="bg-sparkle-container" id="bgSparkleContainer"></div>
 
   <div class="wrapper">
 
@@ -306,76 +303,67 @@
   </div>
 
   <script>
-    // Membuat Cahaya Love Berterbangan di Latar Belakang
-    function createBgHearts() {
-      const container = document.getElementById('bgHeartContainer');
-      const heartIcons = ['💖', '💕', '✨', '🌸', '💗', '❤️'];
-      const totalHearts = 20;
+    // Partikel Cahaya Melayang di Background
+    function createBgSparkles() {
+      const container = document.getElementById('bgSparkleContainer');
+      const totalSparkles = 25;
 
-      for (let i = 0; i < totalHearts; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('floating-bg-heart');
+      for (let i = 0; i < totalSparkles; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('floating-bg-sparkle');
         
-        heart.innerText = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+        sparkle.style.left = Math.random() * 100 + '%';
         
-        // Posisi horizontal acak di seluruh lebar layar
-        heart.style.left = Math.random() * 100 + '%';
+        // Ukuran partikel bercahaya acak
+        const size = (Math.random() * 8 + 4) + 'px';
+        sparkle.style.width = size;
+        sparkle.style.height = size;
         
-        // Ukuran bervariasi agar ada efek kedalaman (depth)
-        const fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
-        heart.style.fontSize = fontSize;
-        
-        // Durasi & Delay acak agar penerbangan tidak berbarengan
-        const duration = (Math.random() * 6 + 7) + 's';
+        const duration = (Math.random() * 6 + 6) + 's';
         const delay = (Math.random() * 8) + 's';
-        const rotation = (Math.random() * 90 - 45) + 'deg';
 
-        heart.style.setProperty('--duration', duration);
-        heart.style.setProperty('--delay', delay);
-        heart.style.setProperty('--rotation', rotation);
+        sparkle.style.setProperty('--duration', duration);
+        sparkle.style.setProperty('--delay', delay);
 
-        container.appendChild(heart);
+        container.appendChild(sparkle);
       }
     }
 
-    // Jalankan efek background saat halaman dimuat
-    createBgHearts();
+    createBgSparkles();
 
     function nextCard(currentNum, nextNum, e) {
       document.getElementById('card' + currentNum).classList.remove('active');
       document.getElementById('card' + nextNum).classList.add('active');
-      createLoveParticles(e);
+      createClickSparkles(e);
     }
 
     function restartCards(e) {
       document.getElementById('card6').classList.remove('active');
       document.getElementById('card1').classList.add('active');
-      createLoveParticles(e);
+      createClickSparkles(e);
     }
 
-    function createLoveParticles(e) {
-      const hearts = ['💖', '💕', '💗', '❤️', '🌸', '✨'];
-      
-      for (let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('heart-particle');
+    // Partikel Cahaya saat Klik
+    function createClickSparkles(e) {
+      for (let i = 0; i < 12; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('click-sparkle');
         
-        heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+        const size = (Math.random() * 8 + 5) + 'px';
+        sparkle.style.width = size;
+        sparkle.style.height = size;
         
-        heart.style.left = e.clientX + 'px';
-        heart.style.top = e.clientY + 'px';
+        sparkle.style.left = e.clientX + 'px';
+        sparkle.style.top = e.clientY + 'px';
         
-        const xOffset = (Math.random() * 120 - 60) + 'px';
-        const randomRotate = (Math.random() * 60 - 30) + 'deg';
+        const xOffset = (Math.random() * 100 - 50) + 'px';
+        sparkle.style.setProperty('--tw-x', xOffset);
         
-        heart.style.setProperty('--tw-x', xOffset);
-        heart.style.setProperty('--tw-r', randomRotate);
-        
-        document.body.appendChild(heart);
+        document.body.appendChild(sparkle);
 
         setTimeout(() => {
-          heart.remove();
-        }, 1800);
+          sparkle.remove();
+        }, 1600);
       }
     }
   </script>
