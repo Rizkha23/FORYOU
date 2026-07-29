@@ -189,6 +189,10 @@
       position: relative;
     }
 
+    .day-num.empty {
+  visibility: hidden; /* Menyembunyikan angka tetapi menjaga struktur posisi grid */
+}
+
     /* Penanda Lingkaran Ulang Tahun */
     .day-num.birthday {
       background: #ffe4e6;
@@ -341,16 +345,13 @@
       <h2>Klik Sampai Abis Yaw..</h2>
       <button class="btn" onclick="nextCard('card1', 'cardCalendar', event)">Klik Disini</button>
     </div>
-
-    <!-- KARTU KALENDER (TAMBAHAN BARU) -->
+      
+     <!-- KARTU KALENDER (SUDAH DISESUAIKAN) -->
     <div class="card" id="cardCalendar">
       <span class="badge">A Very Special Day 🗓️</span>
-      <h2>Hari Istimewa Sayangku ✨</h2>
-      <p>Tanggal yang selalu bikin bersyukur...</p>
       
-      <!-- Kalender Contoh (Bisa kamu ubah nama bulan dan angka tanggalnya) -->
       <div class="calendar-box">
-        <div class="calendar-header">Maret 2026 💖</div>
+        <div class="calendar-header">September 2026 💖</div>
         <div class="calendar-grid">
           <div class="day-name">Min</div>
           <div class="day-name">Sen</div>
@@ -360,7 +361,14 @@
           <div class="day-name">Jum</div>
           <div class="day-name">Sab</div>
 
-          <!-- Silakan sesuaikan urutan tanggal sesuai bulan lahirnya -->
+          <!-- Offset Kosong (Minggu - Kamis) agar Tanggal 1 Mulai di Hari Jumat -->
+          <div class="day-num empty"></div>
+          <div class="day-num empty"></div>
+          <div class="day-num empty"></div>
+          <div class="day-num empty"></div>
+          <div class="day-num empty"></div>
+
+          <!-- Angka Tanggal -->
           <div class="day-num">1</div>
           <div class="day-num">2</div>
           <div class="day-num">3</div>
@@ -372,8 +380,7 @@
           <div class="day-num">9</div>
           <div class="day-num">10</div>
           <div class="day-num">11</div>
-          <!-- Tambahkan kelas "birthday" dan emoji 🎂 pada tanggal ultahnya -->
-          <div class="day-num birthday">12 🎂</div>
+          <div class="day-num">12</div>
           <div class="day-num">13</div>
           <div class="day-num">14</div>
           <div class="day-num">15</div>
@@ -383,12 +390,24 @@
           <div class="day-num">19</div>
           <div class="day-num">20</div>
           <div class="day-num">21</div>
+          <div class="day-num">22</div>
+
+          <!-- Tanggal 23 Ulang Tahun (Pas di Hari Rabu) -->
+          <div class="day-num birthday">23 🎂</div>
+
+          <div class="day-num">24</div>
+          <div class="day-num">25</div>
+          <div class="day-num">26</div>
+          <div class="day-num">27</div>
+          <div class="day-num">28</div>
+          <div class="day-num">29</div>
+          <div class="day-num">30</div>
+          <div class="day-num">31</div>
         </div>
       </div>
 
       <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan ➡️</button>
     </div>
-
     <!-- KARTU 2 -->
     <div class="card" id="card2">
       <span class="badge">A Special Wish</span>
