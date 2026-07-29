@@ -56,7 +56,7 @@
       right: -5%;
     }
 
-    /* Container untuk Partikel Cahaya Background */
+    /* Container Partikel Cahaya Background */
     .bg-sparkle-container {
       position: fixed;
       top: 0;
@@ -68,7 +68,6 @@
       overflow: hidden;
     }
 
-    /* Partikel Cahaya Melayang di Background */
     .floating-bg-sparkle {
       position: absolute;
       bottom: -20px;
@@ -82,20 +81,10 @@
     }
 
     @keyframes floatBgSparkle {
-      0% {
-        opacity: 0;
-        transform: translateY(0) scale(0.5);
-      }
-      30% {
-        opacity: 0.8;
-      }
-      70% {
-        opacity: 0.8;
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-105vh) scale(1.5);
-      }
+      0% { opacity: 0; transform: translateY(0) scale(0.5); }
+      30% { opacity: 0.8; }
+      70% { opacity: 0.8; }
+      100% { opacity: 0; transform: translateY(-105vh) scale(1.5); }
     }
 
     /* Outer Wrapper */
@@ -108,7 +97,7 @@
     /* Card Styling */
     .card {
       display: none;
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 24px;
@@ -126,14 +115,92 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.96);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* TAMPILAN ENVELOPE / SURAT DEPAN */
+    .envelope-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 30px 20px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 15px 35px rgba(244, 63, 94, 0.15);
+      border: 2px dashed #fda4af;
+      transition: all 0.3s ease;
+    }
+
+    .envelope-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(244, 63, 94, 0.25);
+    }
+
+    .envelope-icon {
+      font-size: 4.5rem;
+      margin-bottom: 10px;
+      display: inline-block;
+      animation: pulseHeart 1.5s infinite alternate;
+      filter: drop-shadow(0 4px 10px rgba(244, 63, 94, 0.3));
+    }
+
+    @keyframes pulseHeart {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
+
+    /* KALENDER STYLING */
+    .calendar-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      margin-bottom: 20px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .calendar-header {
+      font-weight: 700;
+      color: #f43f5e;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .day-name {
+      font-weight: 600;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      padding-bottom: 4px;
+    }
+
+    .day-num {
+      padding: 8px 0;
+      color: #475569;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    /* Penanda Lingkaran Ulang Tahun */
+    .day-num.birthday {
+      background: #ffe4e6;
+      color: #e11d48;
+      font-weight: 800;
+      border: 2px solid #f43f5e;
+      animation: popBirthday 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
+    }
+
+    @keyframes popBirthday {
+      0% { transform: scale(1); box-shadow: 0 0 0px rgba(244, 63, 94, 0); }
+      100% { transform: scale(1.12); box-shadow: 0 0 12px rgba(244, 63, 94, 0.4); }
     }
 
     .badge {
@@ -150,7 +217,6 @@
       text-transform: uppercase;
     }
 
-    /* Photo Frame */
     .photo-frame {
       width: 100%;
       aspect-ratio: 4 / 3;
@@ -188,7 +254,6 @@
       margin-bottom: 20px;
     }
 
-    /* Button */
     .btn {
       background: linear-gradient(135deg, #fda4af 0%, #f43f5e 100%);
       color: white;
@@ -207,7 +272,7 @@
       transform: scale(0.97);
     }
 
-    /* Partikel Cahaya saat Klik Tombol */
+    /* Click Sparkles */
     .click-sparkle {
       position: fixed;
       border-radius: 50%;
@@ -219,17 +284,10 @@
     }
 
     @keyframes floatUpSparkle {
-      0% {
-        opacity: 1;
-        transform: translate(0, 0) scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translate(var(--tw-x), -100px) scale(0.2);
-      }
+      0% { opacity: 1; transform: translate(0, 0) scale(1); }
+      100% { opacity: 0; transform: translate(var(--tw-x), -100px) scale(0.2); }
     }
 
-    /* Tombol Kontrol Musik di Pojok Kanan Atas */
     .music-control {
       position: fixed;
       top: 16px;
@@ -252,31 +310,83 @@
 </head>
 <body>
 
-  <!-- Audio Element (Ganti 'musik.mp3' dengan file musikmu) -->
   <audio id="bgMusic" loop>
     <source src="musik.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Tombol Toggle Musik -->
   <button class="music-control" id="musicBtn" onclick="toggleMusic()">🎵</button>
 
-  <!-- Background Ambient Glow -->
   <div class="light-glow glow-1"></div>
   <div class="light-glow glow-2"></div>
-
-  <!-- Container Partikel Cahaya Berterbangan -->
   <div class="bg-sparkle-container" id="bgSparkleContainer"></div>
 
   <div class="wrapper">
 
+    <!-- SURAT DEPAN (AMPLOP LOVE) -->
+    <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
+      <span class="badge">A Special Letter For You 💌</span>
+      <div class="envelope-icon">💌</div>
+      <h2>Ada Surat Buat Kamu!</h2>
+      <p style="margin-top: 8px; margin-bottom: 0px; font-size: 0.85rem; color: #f43f5e; font-weight: 600;">
+        Klik surat ini untuk membuka ✨
+      </p>
+    </div>
+
     <!-- KARTU 1 -->
-    <div class="card active" id="card1">
+    <div class="card" id="card1">
       <span class="badge">Karya Kecil dari Adik Kecil💃😘</span>
       <div class="photo-frame">
         <img src="foto1.jpeg" alt="Foto 1">
       </div>
       <h2>Klik Sampai Abis Yaw..</h2>
-      <button class="btn" onclick="nextCard(1, 2, event)">Klik Disini</button>
+      <button class="btn" onclick="nextCard('card1', 'cardCalendar', event)">Klik Disini</button>
+    </div>
+
+    <!-- KARTU KALENDER (TAMBAHAN BARU) -->
+    <div class="card" id="cardCalendar">
+      <span class="badge">A Very Special Day 🗓️</span>
+      <h2>Hari Istimewa Sayangku ✨</h2>
+      <p>Tanggal yang selalu bikin bersyukur...</p>
+      
+      <!-- Kalender Contoh (Bisa kamu ubah nama bulan dan angka tanggalnya) -->
+      <div class="calendar-box">
+        <div class="calendar-header">Maret 2026 💖</div>
+        <div class="calendar-grid">
+          <div class="day-name">Min</div>
+          <div class="day-name">Sen</div>
+          <div class="day-name">Sel</div>
+          <div class="day-name">Rab</div>
+          <div class="day-name">Kam</div>
+          <div class="day-name">Jum</div>
+          <div class="day-name">Sab</div>
+
+          <!-- Silakan sesuaikan urutan tanggal sesuai bulan lahirnya -->
+          <div class="day-num">1</div>
+          <div class="day-num">2</div>
+          <div class="day-num">3</div>
+          <div class="day-num">4</div>
+          <div class="day-num">5</div>
+          <div class="day-num">6</div>
+          <div class="day-num">7</div>
+          <div class="day-num">8</div>
+          <div class="day-num">9</div>
+          <div class="day-num">10</div>
+          <div class="day-num">11</div>
+          <!-- Tambahkan kelas "birthday" dan emoji 🎂 pada tanggal ultahnya -->
+          <div class="day-num birthday">12 🎂</div>
+          <div class="day-num">13</div>
+          <div class="day-num">14</div>
+          <div class="day-num">15</div>
+          <div class="day-num">16</div>
+          <div class="day-num">17</div>
+          <div class="day-num">18</div>
+          <div class="day-num">19</div>
+          <div class="day-num">20</div>
+          <div class="day-num">21</div>
+        </div>
+      </div>
+
+      <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan ➡️</button>
     </div>
 
     <!-- KARTU 2 -->
@@ -288,7 +398,7 @@
       <h2>Selamat ulang tahun Sayangkuu!!🥳🎉</h2>
       <h3>Partner Tanggal Lahirkuuuuu</h3>
       <p>Ada beberapa ucapan singkat dari adik untuk sayangku...</p>
-      <button class="btn" onclick="nextCard(2, 3, event)">Klik Disini Lagi</button>
+      <button class="btn" onclick="nextCard('card2', 'card3', event)">Klik Disini Lagi</button>
     </div>
 
     <!-- KARTU 3 -->
@@ -300,7 +410,7 @@
       </div>
       <h2>Tapi Terima Kasih ✨</h2>
       <p>Terima kasih sudah selalu membawa kenyamanan, keceriaan, kelucuan, apalagi? kepercayaan di setiap momen ldr kita ini</p>
-      <button class="btn" onclick="nextCard(3, 4, event)">1 Lagi..</button>
+      <button class="btn" onclick="nextCard('card3', 'card4', event)">1 Lagi..</button>
     </div>
 
     <!-- KARTU 4 -->
@@ -311,7 +421,7 @@
       </div>
       <h2>Harapan Terbaik 🎂</h2>
       <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu... doa-doa baik untuk sayangku..</p>
-      <button class="btn" onclick="nextCard(4, 5, event)">Ada Lagi</button>
+      <button class="btn" onclick="nextCard('card4', 'card5', event)">Ada Lagi</button>
     </div>
 
     <!-- KARTU 5 -->
@@ -322,7 +432,7 @@
       </div>
       <h2>Dahla Capek</h2>
       <p><i>Alay kalau banyak-banyak</i><br><i>Lebihnya doa sendiri yaww</i></p>
-      <button class="btn" onclick="nextCard(5, 6, event)">1 Lagi</button>
+      <button class="btn" onclick="nextCard('card5', 'card6', event)">1 Lagi</button>
     </div>
 
     <!-- KARTU 6 -->
@@ -333,7 +443,7 @@
       </div>
       <h2>Titip Kangen Disini Ya!!</h2>
       <p>Kartu nya ga bisa peluk. nanti ganti peluknya kalau syudah pulang</p>
-      <button class="btn" onclick="nextCard(6, 7, event)">1 Lagi Abis</button>
+      <button class="btn" onclick="nextCard('card6', 'card7', event)">1 Lagi Abis</button>
     </div>
 
     <!-- KARTU 7 -->
@@ -342,7 +452,7 @@
       <div class="photo-frame">
         <img src="foto9.jpeg" alt="Foto 5">
       </div>
-      <button class="btn" onclick="nextCard(7, 8, event)">Dah Habissss</button>
+      <button class="btn" onclick="nextCard('card7', 'card8', event)">Dah Habissss</button>
     </div>
 
     <!-- KARTU 8 -->
@@ -362,7 +472,6 @@
     const musicBtn = document.getElementById('musicBtn');
     let isMusicPlaying = false;
 
-    // Fungsi untuk Play/Pause Musik secara Manual
     function toggleMusic() {
       if (isMusicPlaying) {
         music.pause();
@@ -375,7 +484,37 @@
       }
     }
 
-    // Partikel Cahaya Melayang di Background
+    function playMusicAuto() {
+      if (!isMusicPlaying) {
+        music.play().then(() => {
+          isMusicPlaying = true;
+          musicBtn.innerText = '🎵';
+        }).catch(err => console.log("Autoplay blocked: " + err));
+      }
+    }
+
+    // Membuka Surat Pertamaw
+    function openEnvelope(e) {
+      playMusicAuto();
+      document.getElementById('cardEnvelope').classList.remove('active');
+      document.getElementById('card1').classList.add('active');
+      createClickSparkles(e);
+    }
+
+    function nextCard(currentId, nextId, e) {
+      playMusicAuto();
+      document.getElementById(currentId).classList.remove('active');
+      document.getElementById(nextId).classList.add('active');
+      createClickSparkles(e);
+    }
+
+    function restartCards(e) {
+      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+      document.getElementById('cardEnvelope').classList.add('active');
+      createClickSparkles(e);
+    }
+
+    // Partikel Cahaya Background
     function createBgSparkles() {
       const container = document.getElementById('bgSparkleContainer');
       const totalSparkles = 25;
@@ -383,7 +522,6 @@
       for (let i = 0; i < totalSparkles; i++) {
         const sparkle = document.createElement('div');
         sparkle.classList.add('floating-bg-sparkle');
-        
         sparkle.style.left = Math.random() * 100 + '%';
         
         const size = (Math.random() * 8 + 4) + 'px';
@@ -402,28 +540,7 @@
 
     createBgSparkles();
 
-    function nextCard(currentNum, nextNum, e) {
-      // Putar musik otomatis saat pertama kali tombol diklik
-      if (!isMusicPlaying) {
-        music.play().then(() => {
-          isMusicPlaying = true;
-          musicBtn.innerText = '🎵';
-        }).catch(err => console.log("Autoplay diblokir browser: " + err));
-      }
-
-      document.getElementById('card' + currentNum).classList.remove('active');
-      document.getElementById('card' + nextNum).classList.add('active');
-      createClickSparkles(e);
-    }
-
-    function restartCards(e) {
-      // Menghapus kelas active dari semua kartu agar tidak crash/lengket lagi
-      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
-      document.getElementById('card1').classList.add('active');
-      createClickSparkles(e);
-    }
-
-    // Partikel Cahaya saat Klik
+    // Partikel Cahaya Klik
     function createClickSparkles(e) {
       for (let i = 0; i < 12; i++) {
         const sparkle = document.createElement('div');
