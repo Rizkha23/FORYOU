@@ -326,9 +326,9 @@
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
       <span class="badge">A Special Letter For You 💌</span>
       <div class="envelope-icon">💌</div>
-      <h2>Surat Cinta Buat Dia🥴</h2>
+      <h2>Ada Surat Buat Kamu!</h2>
       <p style="margin-top: 8px; margin-bottom: 0px; font-size: 0.85rem; color: #f43f5e; font-weight: 600;">
-        Buka Disini✨
+        Klik surat ini untuk membuka ✨
       </p>
     </div>
 
@@ -346,11 +346,11 @@
     <div class="card" id="cardCalendar">
       <span class="badge">A Very Special Day 🗓️</span>
       <h2>Hari Istimewa Sayangku ✨</h2>
-      <p>Tanggal Kembar Kita anjayy wkwk</p>
+      <p>Tanggal yang selalu bikin bersyukur...</p>
       
       <!-- Kalender Contoh (Bisa kamu ubah nama bulan dan angka tanggalnya) -->
       <div class="calendar-box">
-        <div class="calendar-header">September 2026 💖</div>
+        <div class="calendar-header">Maret 2026 💖</div>
         <div class="calendar-grid">
           <div class="day-name">Min</div>
           <div class="day-name">Sen</div>
@@ -372,7 +372,8 @@
           <div class="day-num">9</div>
           <div class="day-num">10</div>
           <div class="day-num">11</div>
-          <div class="day-num">12</div>
+          <!-- Tambahkan kelas "birthday" dan emoji 🎂 pada tanggal ultahnya -->
+          <div class="day-num birthday">12 🎂</div>
           <div class="day-num">13</div>
           <div class="day-num">14</div>
           <div class="day-num">15</div>
@@ -382,20 +383,10 @@
           <div class="day-num">19</div>
           <div class="day-num">20</div>
           <div class="day-num">21</div>
-          <div class="day-num">22</div>
-          <!-- Tambahkan kelas "birthday" dan emoji 🎂 pada tanggal ultahnya -->
-          <div class="day-num birthday">23 🎂</div>
-          <div class="day-num">24</div>
-          <div class="day-num">25</div>
-          <div class="day-num">26</div>
-          <div class="day-num">27</div>
-          <div class="day-num">28</div>
-          <div class="day-num">29</div>
-          <div class="day-num">30</div>
         </div>
       </div>
 
-      <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut...</button>
+      <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan ➡️</button>
     </div>
 
     <!-- KARTU 2 -->
@@ -575,4 +566,3 @@
   </script>
 </body>
 </html>
-
