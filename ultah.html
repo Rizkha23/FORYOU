@@ -404,10 +404,9 @@
         </div>
       </div>
 
-      <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan ➡️</button>
-    </div>
       <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan</button>
     </div>
+    
     <!-- KARTU 2 -->
     <div class="card" id="card2">
       <span class="badge">A Special Wish</span>
