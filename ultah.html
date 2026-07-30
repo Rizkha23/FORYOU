@@ -330,9 +330,8 @@
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
       <span class="badge">A Special Letter For You 💌</span>
       <div class="envelope-icon">💌</div>
-      <h2>Ada Surat Buat Kamu!</h2>
       <p style="margin-top: 8px; margin-bottom: 0px; font-size: 0.85rem; color: #f43f5e; font-weight: 600;">
-        Klik surat ini untuk membuka ✨
+        Klik Disini✨
       </p>
     </div>
 
