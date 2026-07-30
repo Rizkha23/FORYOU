@@ -350,7 +350,7 @@
       <span class="badge">A Very Special Day 🗓️</span>
       
       <div class="calendar-box">
-        <div class="calendar-header">Septembeer 2026 💖</div>
+        <div class="calendar-header">September 2026 💖</div>
         <div class="calendar-grid">
           <!-- Nama Hari -->
           <div class="day-name">Min</div>
